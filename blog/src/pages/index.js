@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Layout } from "../components/Layout/Layout"
+import { Seo } from "../components/Seo/Seo"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
+    <Seo title="Home" />
     <h2>Blogs</h2>
     <ul>
       {
