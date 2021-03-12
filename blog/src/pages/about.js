@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "gatsby";
+import { graphql } from 'gatsby';
 
-import Layout from "../components/layout";
-import Image from "../components/image";
-import SEO from "../components/seo";
+import { Layout } from "../components/Layout/Layout";
+import { Image } from "../components/Image/Index";
+import { Seo } from "../components/Seo/Seo";
 
 const About = ({ data }) => {
     const { name, company } = data.site.siteMetadata.contact;
     return (
         <Layout>
-            <SEO title="About" />
+            <Seo title="About" />
             <h1>About Us</h1>
             <p>{`${company} was started by ${name} in 2020.`}</p>
             <p>{`At ${company} we just make blogs!`}</p>
