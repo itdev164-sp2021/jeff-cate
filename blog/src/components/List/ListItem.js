@@ -10,6 +10,6 @@ const ListItem = ({ children, ...rest}) => (
 
 export { ListItem }
 
-ListItem.protoType = {
+ListItem.protoTypes = {
     children: PropTypes.node.isRequired
 }

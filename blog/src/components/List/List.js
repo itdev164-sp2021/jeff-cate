@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { BaseContainer } from '../BaseContainer'
+import { BaseContainer } from '../BaseContainer/'
 
-const List = ({ children, ...rest }) => {
+const List = ({ children, ...rest }) => (
     <BaseContainer
         flex
         flexDirection='column'
@@ -12,10 +12,10 @@ const List = ({ children, ...rest }) => {
     >
         {children}
     </BaseContainer>
-}
+)
 
 export { List }
 
-List.protoType = {
+List.protoTypes = {
     children: PropTypes.node.isRequired
 }

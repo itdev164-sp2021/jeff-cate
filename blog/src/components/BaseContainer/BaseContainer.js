@@ -1,5 +1,5 @@
 import React from 'react'
-import PropType from 'prop-types'
+import PropTypes from 'prop-types'
 import { Flex, Box } from 'rebass'
 
 const BaseContainer = ({ children, flex = false, ...rest }) => {
@@ -7,10 +7,10 @@ const BaseContainer = ({ children, flex = false, ...rest }) => {
     return <Component {...rest}>{children}</Component>
 }
 
-export { BaseContainer }
-
-BaseContainer.protoType = {
-    flex: PropType.bool,
-    as: PropType.string,
-    children: PropType.node.isRequired
+BaseContainer.propTypes = {
+    flex: PropTypes.bool,
+    as: PropTypes.string,
+    children: PropTypes.node.isRequired
 }
+
+export { BaseContainer }
