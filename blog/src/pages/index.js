@@ -3,31 +3,24 @@ import { graphql, Link } from "gatsby"
 
 import { Layout } from "../components/Layout/Layout"
 import { Seo } from "../components/Seo/Seo"
+import { List, ListItem } from "../components/List"
 
 const IndexPage = ({ data }) => (
   <Layout>
     <Seo title="Home" />
-    <h2>Blogs</h2>
-    <ul>
-      {
-        data.allContentfulBlogPost.edges.map(edge => (
-          <li>
-            <Link to={edge.node.slug} key={edge.node.id}>{edge.node.title}</Link>
-            <div>
-              <img src={edge.node.heroImage.fluid.src} alt="Hero" />
-            </div>
-            <div>{edge.node.body.childMarkdownRemark.excerpt}</div>
-          </li>
-        ))
-      }
-    </ul>
-    <h2>Navigation</h2>
-    <ul class="nav-list">
-      <li><Link to="/about/">About</Link></li>
-      <li><Link to="/contacts/">Contact</Link></li>
-      <li><Link to="/page-2/">Go to page 2</Link> </li>
-      <li><Link to="/using-typescript/">Go to "Using TypeScript"</Link></li>
-    </ul>
+    <List width={[1, 1 / 2, 2 / 3]} p={2}>
+    {
+      data.allContentfulBlogPost.edges.map(edge => (
+        <ListItem p={3} key={edge.node.id}>
+          <Link to={edge.node.slug} key={edge.node.id}>{edge.node.title}</Link>
+          <div>
+            <img src={edge.node.heroImage.fluid.src} alt="Hero" />
+          </div>
+          <div>{edge.node.body.childMarkdownRemark.excerpt}</div>
+        </ListItem>
+      ))
+    }
+    </List>
   </Layout>
 )
 
