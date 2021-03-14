@@ -35,7 +35,7 @@ export const query = graphql`
         title
         slug
         heroImage{
-					fluid(maxWidth:300) {
+					fluid(maxWidth:600) {
             src
 					}
         }
