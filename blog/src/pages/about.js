@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { graphql } from 'gatsby';
 
 import { Layout } from "../components/Layout/Layout";
-import { Image } from "../components/Image/Index";
+import { Image } from "../components/Image/Image";
 import { Seo } from "../components/Seo/Seo";
 
 const About = ({ data }) => {
