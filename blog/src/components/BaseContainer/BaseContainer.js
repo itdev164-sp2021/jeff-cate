@@ -2,10 +2,12 @@ import React from 'react'
 import PropType from 'prop-types'
 import { Flex, Box } from 'rebass'
 
-export const BaseContainer = ({ children, flex = false, ...rest }) => {
+const BaseContainer = ({ children, flex = false, ...rest }) => {
     let Component = flex ? Flex : Box
     return <Component {...rest}>{children}</Component>
 }
+
+export { BaseContainer }
 
 BaseContainer.protoType = {
     flex: PropType.bool,
