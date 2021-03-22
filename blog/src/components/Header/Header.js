@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components'
-import { Search } from '../Heading'
+import { Search } from 'styled-icons/feather'
 import { H1 } from '../Heading'
 import { IconButton } from '../Button'
 import { Section } from '../Section'
