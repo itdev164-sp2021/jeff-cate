@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { Layout } from '../components/Layout/Layout';
+import { H1 } from '../components/Heading'
 
 const BlogPost = ({ data }) => {
     const { title, body} = data.contentfulBlogPost;
@@ -8,7 +9,7 @@ const BlogPost = ({ data }) => {
     return (
         <Layout>
         <Link to="/">back to home</Link>
-            <h1>{title}</h1>
+            <H1>{title}</H1>
             <div dangerouslySetInnerHTML={{__html: body.childMarkdownRemark.html}}></div>
         </Layout>
     );
