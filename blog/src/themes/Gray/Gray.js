@@ -19,8 +19,20 @@ const theme = {
     }
 }
 
-header: { 
-    backgroundColor: '#555' 
+const variants = {
+    iconButton: {
+        primary: {
+            color: theme.colors.gray[8]
+        },
+        contrast: {
+            color: theme.colors.grays[0]
+        } 
+    },
+    header: { 
+        primary: {
+            backgroundColor:  theme.colors.grays[8]
+        }
+    }
 }
 
-export { theme as Gray }
+export const Gray = { ...theme, variants }
