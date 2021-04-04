@@ -1,4 +1,4 @@
-import { withTheme } from "styled-components"
+// import { withTheme } from "styled-components"
 
 const theme = {
     space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -22,7 +22,7 @@ const theme = {
 const variants = {
     iconButton: {
         primary: {
-            color: theme.colors.gray[8]
+            color: theme.colors.grays[8]
         },
         contrast: {
             color: theme.colors.grays[0]
