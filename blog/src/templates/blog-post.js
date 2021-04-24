@@ -1,14 +1,15 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import { Image } from 'rebass';
 import { Layout } from '../components/Layout/Layout';
-import { H1 } from '../components/Heading'
+import { H1 } from '../components/Heading';
 
 const BlogPost = ({ data }) => {
-    const { title, body} = data.contentfulBlogPost;
+    const { title, body, heroImage} = data.contentfulBlogPost;
 
     return (
         <Layout>
-        <Link to="/">back to home</Link>
+        <Image src={heroImage.fluid.src} />
             <H1>{title}</H1>
             <div dangerouslySetInnerHTML={{__html: body.childMarkdownRemark.html}}></div>
         </Layout>
@@ -17,13 +18,18 @@ const BlogPost = ({ data }) => {
 export default BlogPost;
 
 export const pageQuery = graphql`
-    query blogPostQuery($slug: String!){
+    query blogPostQuery($slug: String!) {
         contentfulBlogPost(slug: {eq: $slug}) {
             title
             slug
             body {
                 childMarkdownRemark {
-                    html
+                html
+                }
+            }
+            heroImage {
+                fluid(maxWidth: 960) {
+                    src
                 }
             }
         }
